@@ -1,0 +1,45 @@
+﻿@model banklokalASPNET.Models.Klient
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Klient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pesel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pesel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataUr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataUr)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="KId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

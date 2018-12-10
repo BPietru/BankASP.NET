@@ -1,0 +1,52 @@
+﻿@model IEnumerable<banklokalASPNET.Models.Pozyczki>
+
+@{
+    ViewData["Title"] = "Bank";
+}
+
+<h2>Index</h2>
+<div class="form-group">
+    <form class = "row" action="/pozyczkis/filter/" method="get">
+        <select name="id" class="form-control" asp-items="ViewBag.Klienci"></select>
+        <input type="submit" value ="Filtruj" />
+    </form>
+</div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Wartosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataSplaty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.K)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wartosc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSplaty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.K.PelneImie)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

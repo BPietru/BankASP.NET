@@ -1,0 +1,42 @@
+﻿@model banklokalASPNET.Models.Klient
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Klient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pesel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Pesel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataUr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataUr)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.KId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
